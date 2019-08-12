@@ -2,7 +2,11 @@
 from operator import attrgetter
 import os
 
-from pip.req import parse_requirements
+try:
+    from pip._internal.req import parse_requirements
+except ImportError:
+    from pip.req import parse_requirements
+
 from setuptools import setup
 
 import lib2to3import
